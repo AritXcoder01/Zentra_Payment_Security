@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Report | Zentra</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config defined by the Design System -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 47, 108, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface/90 text-primary font-headline-md text-headline-md docked full-width top-0 sticky z-50 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<button aria-label="Go back" class="flex items-center justify-center p-sm hover:bg-surface-variant/50 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-display text-display text-primary tracking-tight">Zentra</span>
+<div class="flex items-center gap-sm">
+<!-- Trailing Icon Placeholder to balance flex-between if needed, or actual trailing icon -->
+<button aria-label="Notifications" class="flex items-center justify-center p-sm hover:bg-surface-variant/50 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col px-margin-mobile py-lg w-full max-w-2xl mx-auto gap-lg">
+<!-- Header Section -->
+<div class="flex flex-col gap-xs">
+<h1 class="font-headline-lg text-headline-lg text-primary">Review Your Report</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Please confirm the details below before submitting. Accuracy ensures faster guidance.</p>
+</div>
+<!-- Glassmorphic Details Card -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-md">
+<!-- Data Rows -->
+<div class="flex flex-col gap-sm border-b border-outline-variant/30 pb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Fraud Type</span>
+<span class="font-body-lg text-body-lg text-on-surface">Phishing / Unauthorized Transfer</span>
+</div>
+<div class="flex flex-col gap-sm border-b border-outline-variant/30 pb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Payment Mode</span>
+<span class="font-body-lg text-body-lg text-on-surface">UPI Transfer</span>
+</div>
+<div class="flex flex-col gap-sm border-b border-outline-variant/30 pb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Amount</span>
+<span class="font-body-lg text-body-lg text-error font-medium">₹ 15,000.00</span>
+</div>
+<div class="flex flex-col gap-sm border-b border-outline-variant/30 pb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Incident Date</span>
+<span class="font-body-lg text-body-lg text-on-surface">October 24, 2023 - 14:30 IST</span>
+</div>
+<div class="flex flex-col gap-sm border-b border-outline-variant/30 pb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Transaction Reference</span>
+<span class="font-body-lg text-body-lg text-on-surface font-mono">TXN9876543210</span>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Description</span>
+<p class="font-body-md text-body-md text-on-surface">Received a call claiming to be bank support regarding a blocked card. Provided OTP resulting in immediate deduction of funds.</p>
+</div>
+</div>
+<!-- Disclaimer & Action Area -->
+<div class="flex flex-col gap-md mt-auto pt-lg">
+<div class="flex items-start gap-sm bg-surface-container-low p-md rounded-lg border border-outline-variant/50">
+<span class="material-symbols-outlined text-secondary shrink-0 mt-0.5" data-icon="info">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Zentra provides guidance and official support resources. Submitting this form does not automatically file a complaint with a bank, police department, RBI or government authority.
+                </p>
+</div>
+<div class="flex flex-col gap-sm w-full">
+<button class="w-full bg-primary-container text-on-primary font-label-lg text-label-lg py-md rounded-lg flex items-center justify-center gap-xs shadow-sm hover:opacity-90 active:scale-[0.98] transition-all">
+                    Submit &amp; Get Guidance
+                    <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-transparent border-[1.5px] border-primary-container text-primary-container font-label-lg text-label-lg py-md rounded-lg flex items-center justify-center hover:bg-surface-variant/30 transition-colors">
+                    Edit Details
+                </button>
+</div>
+</div>
+</main>
+<!-- Suppress BottomNavBar for this linear/transactional flow based on UX Goal -->
+</body></html>

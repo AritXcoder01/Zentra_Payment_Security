@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Profile - Zentra</title>
+<!-- Google Fonts: Inter & Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- 
+      TopAppBar (Task-focused adaptation)
+      Uses JSON style keys: bg_color, component_shape, separation_logic, shell_layout, primary_color, typography
+    -->
+<header class="bg-surface/90 flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto docked full-width top-0 sticky z-50 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<!-- Back Button for sub-page -->
+<button aria-label="Go back" class="text-primary hover:bg-surface-variant/50 p-2 -ml-2 rounded-full transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="text-primary font-headline-md text-headline-md">Edit Profile</h1>
+</div>
+<!-- Optional trailing action removed for focused task -->
+<div></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-lg mx-auto px-margin-mobile pt-lg pb-[100px]">
+<!-- Profile Photo Edit Section -->
+<div class="flex flex-col items-center justify-center mb-xl relative">
+<div class="relative group cursor-pointer">
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-surface-container-high shadow-[0_4px_20px_rgba(0,47,108,0.05)] bg-surface-container-low flex items-center justify-center">
+<img alt="Profile Photo Placeholder" class="w-full h-full object-cover text-transparent" data-alt="A professional headshot of a person in a corporate modern setting, soft bright lighting, clean white and subtle navy blue background, high quality, realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKVT4vKeqKp73S-WeWSaWruuOpayQNlN3f1gW4uTJuNlvhm1vWcKh7bJpnilo_8ArIhWN96G6g6lKCEs0FcPy_CS7H2-6VyKJiA21kRh3uO4MnL2bvIe3XNBS1glU-ey33RHiWcLWf9jxK17DhKsTQxtWbDFLxLVMrwkSVv1DzYlGYq5SuxoU_h4ysK1EXEtm7yFYAC7AkI2fWrJDfUW34Lui1I89E9cTjWt4RDohxRH_DW-kSm-55"/>
+</div>
+<!-- Edit Overlay -->
+<div class="absolute bottom-0 right-0 bg-primary-container text-on-primary rounded-full w-8 h-8 flex items-center justify-center shadow-md border-2 border-surface ring-2 ring-transparent transition-transform hover:scale-105">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</div>
+</div>
+<p class="mt-sm font-label-sm text-label-sm text-on-surface-variant">Tap to change</p>
+</div>
+<!-- Edit Form (Surface Card) -->
+<form class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,47,108,0.02)] p-gutter flex flex-col gap-lg">
+<!-- Editable Field: Full Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="fullName">Full Name</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline" style="font-variation-settings: 'FILL' 0;">person</span>
+<input class="w-full h-14 pl-12 pr-4 rounded-lg border border-outline-variant/60 bg-surface focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest outline-none transition-all font-body-md text-body-md text-on-surface" id="fullName" placeholder="Enter your full name" type="text" value="Sarah Jenkins"/>
+</div>
+</div>
+<!-- Editable Field: Email Address -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="emailAddr">Email Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline" style="font-variation-settings: 'FILL' 0;">mail</span>
+<input class="w-full h-14 pl-12 pr-4 rounded-lg border border-outline-variant/60 bg-surface focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest outline-none transition-all font-body-md text-body-md text-on-surface" id="emailAddr" placeholder="Enter your email" type="email" value="sarah.jenkins@example.com"/>
+</div>
+</div>
+<hr class="border-outline-variant/20 my-xs"/>
+<!-- Read-only Field: Mobile Number -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1 flex items-center gap-1" for="mobileNum">
+                    Mobile Number 
+                    <span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</label>
+<div class="relative flex items-center opacity-80">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">call</span>
+<input class="w-full h-14 pl-12 pr-12 rounded-lg border border-outline-variant/40 bg-surface-container-low text-on-surface-variant font-body-md text-body-md cursor-not-allowed select-none focus:outline-none" id="mobileNum" readonly="" type="text" value="+91 98765 43210"/>
+<span class="material-symbols-outlined absolute right-4 text-outline" style="font-variation-settings: 'FILL' 0;" title="Locked field">lock</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-1 leading-relaxed">
+                    Your verified mobile number cannot be changed through profile settings.
+                </p>
+</div>
+</form>
+</main>
+<!-- Fixed Bottom CTA Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/95 backdrop-blur-lg border-t border-outline-variant/20 px-margin-mobile py-md pb-safe z-40 shadow-[0_-4px_20px_rgba(0,47,108,0.05)]">
+<div class="max-w-lg mx-auto">
+<button class="w-full h-12 bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-md relative overflow-hidden group" type="button">
+<span class="relative z-10">Save Changes</span>
+<!-- Subtle inner glow effect for primary button depth -->
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+</div>
+<!-- 
+      Note: BottomNavBar is intentionally suppressed because this is a Task-Focused sub-page (Edit Profile) 
+      that implies a temporary departure from the main flow, adhering to the "Automatic Suppression" rule.
+    -->
+</body></html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zentra - Security Alerts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="bg-surface/90 text-primary font-headline-md text-headline-md docked full-width top-0 sticky z-50 backdrop-blur-md flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto shadow-none">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a person looking directly at the camera. The lighting is soft and flattering, set against a neutral, light-mode background. The aesthetic is corporate and modern, reflecting trust and clarity, consistent with a high-end secure application's visual language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnlaSGJDJLphUCKBGiehtM9CqjcklSnVwvnjoAvkvIkoVdymPuLmG45v7XC5RQWuL9Iyqas3jZBodzNZNSS83shidh09XoWT-sMGjn02DEKCS-NT24MKivTb1X1MvR06-0HsdxhLKqU-PsvMyCnn_Vm_tSytI_IpXBcFlOdl2zQSYqA3xfEj8aCID15WybMsIdNoHqp4wAkpgNNOzSIgH8_gAM3emF_aZ0cinAPXKQgKAN_b9U7CQJ"/>
+</div>
+<span class="font-display text-display text-primary tracking-tight">Zentra</span>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="w-full max-w-7xl mx-auto px-margin-mobile pt-lg pb-xl">
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-sm">Security Alerts</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Review recent security events and status updates.</p>
+</div>
+<!-- Alerts Container -->
+<div class="flex flex-col gap-sm">
+<!-- High Priority Alert -->
+<div class="bg-surface-container-lowest border border-error/30 rounded-lg p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex items-start justify-between">
+<div class="flex gap-md">
+<div class="mt-1 w-2 h-2 rounded-full bg-error"></div>
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-error text-[16px]" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-sm text-label-sm text-error">High Priority</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Unusual Login Attempt</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">We detected a login attempt from a new device in London, UK. If this wasn't you, please secure your account immediately.</p>
+<span class="font-label-sm text-label-sm text-outline">10 mins ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Warning Alert -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-start justify-between">
+<div class="flex gap-md">
+<div class="mt-1 w-2 h-2 rounded-full bg-transparent"></div>
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-[#F59E0B] text-[16px]" data-icon="error">error</span>
+<span class="font-label-sm text-label-sm text-[#F59E0B]">Warning</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Password Expiry Upcoming</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Your corporate password will expire in 3 days. Please update it to maintain uninterrupted access.</p>
+<span class="font-label-sm text-label-sm text-outline">2 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Information Alert -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] opacity-80">
+<div class="flex items-start justify-between">
+<div class="flex gap-md">
+<div class="mt-1 w-2 h-2 rounded-full bg-transparent"></div>
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="info">info</span>
+<span class="font-label-sm text-label-sm text-secondary">Information</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Security Scan Complete</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">The routine weekly vulnerability scan completed successfully. No immediate actions are required at this time.</p>
+<span class="font-label-sm text-label-sm text-outline">Yesterday</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 fixed bottom-0 w-full z-50 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,47,108,0.05)] flex justify-around items-center h-20 px-4 pb-safe md:hidden">
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm">Activity</span>
+</a>
+<!-- Active (Safety acts as Alerts here based on context) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 opacity-80 transition-opacity duration-150 p-2 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm">Safety</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

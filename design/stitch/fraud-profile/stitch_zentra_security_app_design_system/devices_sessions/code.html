@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zentra - Devices &amp; Sessions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-safe font-body-md flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-surface/90 dark:bg-surface-dim/90 font-headline-md text-headline-md font-label-lg text-label-lg text-primary dark:text-primary-fixed-dim docked full-width top-0 sticky z-50 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 flat no shadows flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<button aria-label="Go back" class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display text-display text-primary dark:text-primary-fixed-dim tracking-tight">Devices &amp; Sessions</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="w-full max-w-4xl px-margin-mobile py-lg flex-1">
+<!-- Current Device Card -->
+<section class="mb-xl">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant mb-sm">Current Device</h2>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] flex items-start gap-md backdrop-blur-[16px] bg-white/80">
+<div class="p-3 bg-primary-fixed text-on-primary-fixed rounded-full flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="smartphone" data-weight="fill" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">This Device - Android</h3>
+<div class="flex items-center gap-xs mt-xs">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<p class="font-body-md text-body-md text-[#10b981] font-medium">Active Now</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Last used: Just now<br/>San Francisco, CA • IP: 192.168.1.1</p>
+</div>
+</div>
+</section>
+<!-- Other Sessions -->
+<section class="mb-xl">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant mb-sm">Other Sessions</h2>
+<div class="flex flex-col gap-sm">
+<!-- Session Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex items-start gap-md hover:bg-surface-container-low transition-colors">
+<div class="p-3 bg-surface-variant text-on-surface-variant rounded-full flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="desktop_windows">desktop_windows</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Chrome on Windows</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Last used: 2 hours ago<br/>San Jose, CA</p>
+</div>
+<button aria-label="Sign out this session" class="p-2 text-primary hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+<!-- Session Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex items-start gap-md hover:bg-surface-container-low transition-colors">
+<div class="p-3 bg-surface-variant text-on-surface-variant rounded-full flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="tablet_mac">tablet_mac</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Safari on iPad</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Last used: Yesterday, 14:30<br/>Seattle, WA</p>
+</div>
+<button aria-label="Sign out this session" class="p-2 text-primary hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Action Area -->
+<div class="mt-xl flex flex-col gap-md">
+<button class="w-full bg-primary-container text-on-primary rounded-full py-3 px-6 font-label-lg text-label-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                Sign Out Other Sessions
+            </button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant">
+                Signing out will require you to log back in on those devices.
+            </p>
+</div>
+</main>
+</body></html>

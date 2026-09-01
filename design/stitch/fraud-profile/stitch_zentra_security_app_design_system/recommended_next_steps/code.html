@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recommended Next Steps - Zentra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 47, 108, 0.1);
+            box-shadow: 0px 4px 20px rgba(0, 47, 108, 0.05);
+        }
+        
+        .soft-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 47, 108, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface/90 text-primary font-headline-md text-headline-md docked full-width top-0 sticky z-50 backdrop-blur-md border-b border-outline-variant/30 flat no shadows flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="hover:bg-surface-variant/50 transition-colors rounded-full p-2 -ml-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<span class="font-display text-display text-primary tracking-tight text-xl">Zentra</span>
+</div>
+<div>
+<button aria-label="Notifications" class="hover:bg-surface-variant/50 transition-colors rounded-full p-2 -mr-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pt-lg pb-xl">
+<!-- Header Section -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Recommended Next Steps</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Follow these immediate actions to secure your assets and report the incident.</p>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-full border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">report</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unauthorized Transfer</span>
+</div>
+<!-- Medium Severity Indicator -->
+<div class="flex items-center gap-2 bg-[#fef08a]/30 px-3 py-1.5 rounded-full border border-[#ca8a04]/20">
+<div class="w-2 h-2 rounded-full bg-[#ca8a04]"></div>
+<span class="font-label-sm text-label-sm text-[#854d0e]">Medium Severity</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Immediate Actions (Spans full on mobile, 8 cols on desktop) -->
+<div class="md:col-span-8 flex flex-col gap-sm">
+<h2 class="font-label-lg text-label-lg text-on-surface mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+                    Immediate Actions
+                </h2>
+<div class="glass-card rounded-xl p-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Contact Your Bank</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Notify your financial institution immediately to freeze affected accounts and halt further transactions.</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 rounded-lg hover:bg-primary-container transition-colors whitespace-nowrap w-full sm:w-auto shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                        Call Bank
+                    </button>
+</div>
+<div class="glass-card rounded-xl p-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">lock_reset</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Secure Your Account</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Change passwords for your banking app, email, and any related financial services.</p>
+</div>
+</div>
+<button class="bg-transparent text-primary border-1.5 border-primary font-label-lg text-label-lg px-4 py-2 rounded-lg hover:bg-surface-variant/20 transition-colors whitespace-nowrap w-full sm:w-auto">
+                        Update Credentials
+                    </button>
+</div>
+<div class="glass-card rounded-xl p-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">policy</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Preserve Evidence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Do not delete any emails, SMS messages, or transaction records related to the incident.</p>
+</div>
+</div>
+<button class="bg-transparent text-primary border-1.5 border-primary font-label-lg text-label-lg px-4 py-2 rounded-lg hover:bg-surface-variant/20 transition-colors whitespace-nowrap w-full sm:w-auto">
+                        View Log
+                    </button>
+</div>
+</div>
+<!-- Official Resources (Spans full on mobile, 4 cols on desktop) -->
+<div class="md:col-span-4 flex flex-col gap-sm">
+<h2 class="font-label-lg text-label-lg text-on-surface mb-xs mt-lg md:mt-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">assured_workload</span>
+                    Official Resources
+                </h2>
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 soft-shadow hover:bg-surface-variant/10 transition-colors cursor-pointer group">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_police</span>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Cybercrime Reporting</h4>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">File an official report with national authorities.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 soft-shadow hover:bg-surface-variant/10 transition-colors cursor-pointer group">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Bank Fraud Support</h4>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Direct lines to major institutional fraud departments.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 soft-shadow hover:bg-surface-variant/10 transition-colors cursor-pointer group">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">gavel</span>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Financial Grievance</h4>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Ombudsman and dispute resolution resources.</p>
+</div>
+</div>
+<!-- Safety Recommendations (Full width timeline) -->
+<div class="md:col-span-12 mt-lg">
+<h2 class="font-label-lg text-label-lg text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">shield</span>
+                    Prevention Checklist
+                </h2>
+<div class="glass-card rounded-xl p-lg relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary-fixed/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col gap-6">
+<!-- Timeline Item 1 -->
+<div class="flex gap-4 relative">
+<!-- Line connecting items -->
+<div class="absolute left-3 top-8 bottom-[-24px] w-0.5 bg-outline-variant/30 hidden sm:block"></div>
+<div class="w-6 h-6 rounded-full border-2 border-primary bg-surface-container-lowest flex items-center justify-center shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Enable Two-Factor Authentication (2FA)</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">Use an authenticator app rather than SMS for stronger security across all financial accounts.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="flex gap-4 relative">
+<div class="absolute left-3 top-8 bottom-[-24px] w-0.5 bg-outline-variant/30 hidden sm:block"></div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center shrink-0 z-10 mt-1">
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Review Account Activity Daily</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">Set up push notifications for all outgoing transactions above a minimal threshold.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center shrink-0 z-10 mt-1">
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Verify Sender Identities</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">Never trust caller ID or email addresses blindly. Always verify through official channels before sharing information.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, present on mobile, but suppressed here due to linear intent per instructions, keeping code minimal if needed, but omitted as this is a focused task screen) -->
+<!-- Not rendering bottom nav as this is a task-focused screen with a back button, implying a temporary departure. -->
+</body></html>

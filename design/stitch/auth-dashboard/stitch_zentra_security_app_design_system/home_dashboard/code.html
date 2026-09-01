@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Zentra - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#899ca5",
+                    "surface-tint": "#3c5d9c",
+                    "on-secondary-container": "#003558",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#aec6ff",
+                    "on-primary-fixed": "#001a42",
+                    "primary-container": "#002f6c",
+                    "secondary-fixed": "#cfe5ff",
+                    "tertiary": "#0c1f25",
+                    "outline-variant": "#c4c6d2",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#d2e6ef",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004a77",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#191c1e",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container": "#eceef0",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed-dim": "#b6cad2",
+                    "on-surface-variant": "#434750",
+                    "primary": "#001b44",
+                    "surface": "#f7f9fb",
+                    "secondary": "#00629d",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#00a2fd",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-background": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "outline": "#747781",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary-fixed": "#0b1e24",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#224583",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-container": "#22343b",
+                    "on-secondary-fixed": "#001d33",
+                    "primary-fixed-dim": "#aec6ff",
+                    "secondary-fixed-dim": "#98cbff",
+                    "on-primary-container": "#7999dc",
+                    "on-tertiary-fixed-variant": "#374951"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "label-lg": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "otp-input": [
+                            "Inter"
+                    ],
+                    "display": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.04em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "otp-input": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "0.2em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 47, 108, 0.1);
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/90 dark:bg-surface-dim/90 docked full-width top-0 sticky z-50 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-lg">
+                S
+            </div>
+<div>
+<div class="font-display text-display text-primary dark:text-primary-fixed-dim tracking-tight text-xl leading-none">Zentra</div>
+<div class="text-on-surface-variant text-sm" style="opacity: 0;">Good Morning, Sarah</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="hover:bg-surface-variant/50 dark:hover:bg-surface-container-highest/50 transition-colors p-2 rounded-full active:opacity-80 transition-opacity duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pt-lg pb-xl space-y-lg">
+<!-- Security Status Main Feature -->
+<section class="glass-card rounded-xl p-lg shadow-[0_4px_20px_rgba(0,47,108,0.05)] relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-48 h-48 bg-primary-container/5 rounded-full blur-2xl"></div>
+<div class="flex items-start gap-md relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary text-2xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Your Zentra security checks are active</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                        No immediate alerts detected
+                    </p>
+</div>
+</div>
+</section>
+<!-- Payment Overview Grid -->
+<section class="grid grid-cols-2 gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-2 mb-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_downward</span>
+<span class="font-label-lg text-label-lg">Money In</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">₹18,450</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-2 mb-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_upward</span>
+<span class="font-label-lg text-label-lg">Money Out</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">₹12,750</div>
+</div>
+</section>
+<!-- Security Insights -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">1 security recommendation</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Review your linked devices</div>
+</div>
+</div>
+<button class="text-primary font-label-lg text-label-lg">View</button>
+</section>
+<!-- Quick Actions -->
+<section>
+<h3 class="font-label-lg text-label-lg text-on-surface-variant mb-md uppercase tracking-wider">Quick Actions</h3>
+<div class="grid grid-cols-4 gap-sm">
+<button class="flex flex-col items-center gap-xs">
+<div class="w-14 h-14 rounded-full bg-error text-on-error flex items-center justify-center shadow-lg active:scale-95 transition-transform scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface">Report Fraud</span>
+</button>
+<button class="flex flex-col items-center gap-xs">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-primary flex items-center justify-center active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">manage_search</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface">Check Activity</span>
+</button>
+<button class="flex flex-col items-center gap-xs">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-primary flex items-center justify-center active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface">Safety Guide</span>
+</button>
+<button class="flex flex-col items-center gap-xs">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-primary flex items-center justify-center active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">support_agent</span>
+</div>
+<span class="font-label-sm text-label-sm text-center text-on-surface">Help</span>
+</button>
+</div>
+</section>
+<!-- Recent Activity -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Recent Activity</h3>
+<button class="text-primary font-label-lg text-label-lg">See All</button>
+</div>
+<div class="space-y-sm">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex items-center justify-between shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Debit UPI</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Today, 10:42 AM</div>
+</div>
+</div>
+<div class="font-label-lg text-label-lg text-on-surface">- ₹1,250</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex items-center justify-between shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Bank Transfer</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Yesterday, 4:15 PM</div>
+</div>
+</div>
+<div class="font-label-lg text-label-lg text-green-700">+ ₹4,500</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-surface/90 dark:bg-surface-dim/90 fixed bottom-0 w-full z-50 backdrop-blur-lg border-t border-outline-variant/20 dark:border-outline/10 shadow-[0_-4px_20px_rgba(0,47,108,0.05)] flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold after:content-[''] after:w-1 after:h-1 after:bg-primary dark:after:bg-primary-fixed-dim after:rounded-full after:mt-1 hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 scale-95 transition-transform duration-200 w-full py-2" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 transition-colors duration-200 w-full py-2" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">history</span>
+<span class="font-label-sm text-label-sm">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 transition-colors duration-200 w-full py-2" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">verified_user</span>
+<span class="font-label-sm text-label-sm">Safety</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 transition-colors duration-200 w-full py-2" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

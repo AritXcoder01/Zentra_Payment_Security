@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zentra - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#899ca5",
+                      "surface-tint": "#3c5d9c",
+                      "on-secondary-container": "#003558",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#aec6ff",
+                      "on-primary-fixed": "#001a42",
+                      "primary-container": "#002f6c",
+                      "secondary-fixed": "#cfe5ff",
+                      "tertiary": "#0c1f25",
+                      "outline-variant": "#c4c6d2",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#d2e6ef",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#004a77",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#191c1e",
+                      "surface-variant": "#e0e3e5",
+                      "surface-container": "#eceef0",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-fixed-dim": "#b6cad2",
+                      "on-surface-variant": "#434750",
+                      "primary": "#001b44",
+                      "surface": "#f7f9fb",
+                      "secondary": "#00629d",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#00a2fd",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-background": "#191c1e",
+                      "surface-container-high": "#e6e8ea",
+                      "outline": "#747781",
+                      "inverse-surface": "#2d3133",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-bright": "#f7f9fb",
+                      "on-tertiary-fixed": "#0b1e24",
+                      "background": "#f7f9fb",
+                      "on-primary-fixed-variant": "#224583",
+                      "surface-container-low": "#f2f4f6",
+                      "tertiary-container": "#22343b",
+                      "on-secondary-fixed": "#001d33",
+                      "primary-fixed-dim": "#aec6ff",
+                      "secondary-fixed-dim": "#98cbff",
+                      "on-primary-container": "#7999dc",
+                      "on-tertiary-fixed-variant": "#374951"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-mobile": "20px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "otp-input": [
+                              "Inter"
+                      ],
+                      "display": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.04em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "otp-input": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "0.2em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 47, 108, 0.1);
+        }
+        
+        .shadow-soft {
+            box-shadow: 0px 4px 20px rgba(0, 47, 108, 0.05);
+        }
+
+        .primary-btn-glow {
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-center font-body-lg antialiased">
+<!-- Linear Flow: Suppressing Navigation Shells as per instructions -->
+<main class="w-full max-w-md mx-auto min-h-screen flex flex-col relative overflow-hidden bg-surface-lowest">
+<!-- Decorative Background Element -->
+<div class="absolute top-[-10%] left-[-20%] w-[140%] h-[60%] bg-gradient-to-b from-primary-fixed-dim/30 to-transparent rounded-[100%] blur-3xl -z-10 pointer-events-none"></div>
+<!-- Top AppBar (Simplified for Onboarding) -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50">
+<div class="font-display text-display text-primary tracking-tight">Zentra</div>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors">
+                Skip
+            </button>
+</header>
+<!-- Content Area -->
+<div class="flex-1 flex flex-col justify-center px-margin-mobile py-lg pb-[120px] relative z-10">
+<!-- Visual Hero Area -->
+<div class="w-full aspect-square mb-xl relative rounded-3xl overflow-hidden flex items-center justify-center group">
+<!-- Fallback gradient if image fails -->
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container to-primary-fixed opacity-50"></div>
+<img alt="Security Illustration" class="w-full h-full object-cover relative z-10 transition-transform duration-700 ease-out group-hover:scale-105" data-alt="A modern, abstract 3D illustration symbolizing digital security and financial protection. Floating translucent shields and geometric data blocks arranged in a harmonious, balanced composition. The color palette features deep navy blues, crisp whites, and soft light blue accents, set against a pristine, light-mode background. The lighting is soft and studio-quality, creating a sense of trust, clarity, and advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiRbK3gSsojrDW-J_RK-5DhvZoyqcro28xerr-UHXiRYiXXYB2HHH-b-xMG9bgRBa9X71TdubXS2IhaK_0Wnc_w_C4gg25TIB-OQf0MOB7qFd8Vp-fOJVce1oAI8hSh8cciaMZoUdqZvD3HB57HTTQO7UEx7crXhxIbYNB8E1brTl51yg-1HvXizJowlV_Hm5BkGPs_EFICZBgHI_tFKlOEoF_bE34ntHH9l6dh1wzlJ8Ga0nx5a2j"/>
+<!-- Floating Glass Elements for added depth -->
+<div class="absolute bottom-6 right-6 glass-card rounded-2xl p-sm flex items-center gap-sm shadow-soft z-20 animate-[bounce_3s_ease-in-out_infinite]">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-primary">Checks complete</span>
+</div>
+</div>
+<!-- Typography & Copy -->
+<div class="flex flex-col gap-sm text-center mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-primary">
+                    Your Payments.<br/>Better Protected.
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px] mx-auto">
+                    Understand your financial activity clearly and respond to security incidents with professional-grade protection.
+                </p>
+</div>
+</div>
+<!-- Bottom Actions (Fixed) -->
+<div class="absolute bottom-0 w-full px-margin-mobile pb-lg pt-md bg-gradient-to-t from-surface via-surface/90 to-transparent z-50">
+<div class="flex flex-col gap-sm">
+<button class="w-full h-12 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg primary-btn-glow hover:opacity-90 transition-opacity active:scale-[0.98] flex items-center justify-center">
+                    Continue
+                </button>
+</div>
+<!-- Progress Indicators -->
+<div class="flex justify-center gap-2 mt-md">
+<div class="w-8 h-1.5 rounded-full bg-primary-container"></div>
+<div class="w-2 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-1.5 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</main>
+</body></html>

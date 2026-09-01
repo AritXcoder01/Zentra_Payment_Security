@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zentra - Security Center</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#899ca5",
+                      "surface-tint": "#3c5d9c",
+                      "on-secondary-container": "#003558",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#aec6ff",
+                      "on-primary-fixed": "#001a42",
+                      "primary-container": "#002f6c",
+                      "secondary-fixed": "#cfe5ff",
+                      "tertiary": "#0c1f25",
+                      "outline-variant": "#c4c6d2",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#d2e6ef",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#004a77",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#191c1e",
+                      "surface-variant": "#e0e3e5",
+                      "surface-container": "#eceef0",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-fixed-dim": "#b6cad2",
+                      "on-surface-variant": "#434750",
+                      "primary": "#001b44",
+                      "surface": "#f7f9fb",
+                      "secondary": "#00629d",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#00a2fd",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-background": "#191c1e",
+                      "surface-container-high": "#e6e8ea",
+                      "outline": "#747781",
+                      "inverse-surface": "#2d3133",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-bright": "#f7f9fb",
+                      "on-tertiary-fixed": "#0b1e24",
+                      "background": "#f7f9fb",
+                      "on-primary-fixed-variant": "#224583",
+                      "surface-container-low": "#f2f4f6",
+                      "tertiary-container": "#22343b",
+                      "on-secondary-fixed": "#001d33",
+                      "primary-fixed-dim": "#aec6ff",
+                      "secondary-fixed-dim": "#98cbff",
+                      "on-primary-container": "#7999dc",
+                      "on-tertiary-fixed-variant": "#374951"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-mobile": "20px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "otp-input": ["Inter"],
+                      "display": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "otp-input": ["28px", {"lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                      "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 47, 108, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 47, 108, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-lg text-body-lg">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 backdrop-blur-md bg-surface/90 border-b border-outline-variant/30 flat no shadows flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<span class="font-display text-display text-primary tracking-tight">Zentra</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant/30 hover:bg-surface-variant/50 transition-colors">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A close up, high quality, well-lit professional headshot of a person looking at the camera, conveying trust and security. The image should have a light mode aesthetic with subtle blue and white tones, matching a professional corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVvu7fLQjYWvxT1FKh6uL8QkN34sss18xAiZVW0KIbjd6YC5pFoq5zMZWT5TUxfFEap-2397OZfSgqUUPgV2THeV5Tf3AOISdq1X939OtEL0i-nM_dOS8c-WM8byWV2TV8MZ14tqo1bMXmcWMf6qtatPHBUe3PdRt6ERu2OjJO3opU6Xx0KVlzFZCRelbZ9KtUaVCi_5dgHqoxcNJWjigQtpNo3c93zX8vR2TfQE-YH6bthL6j5i1A"/>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile py-lg pb-32">
+<!-- Header Section -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Security Center</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your protection and privacy settings.</p>
+</div>
+<!-- Status Card (Glassmorphism) -->
+<section class="glass-card rounded-xl p-lg mb-xl relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined icon-fill text-[#10B981]">shield_lock</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Protection Status: Good</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your account is actively monitored. All security checks are complete and no issues have been detected.</p>
+</div>
+<div>
+<button class="bg-primary-container text-on-primary font-label-lg text-label-lg px-md py-sm rounded-lg hover:opacity-90 transition-opacity shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]">
+                        Run Security Scan
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Security Controls -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+<!-- Transaction Monitoring -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] hover:border-primary-fixed-dim transition-colors flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<span class="bg-[#10B981]/10 text-[#047857] font-label-sm text-label-sm px-2 py-1 rounded-full flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span> Active
+                    </span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Transaction Monitoring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time analysis of transfers to prevent unauthorized access.</p>
+</div>
+</div>
+<!-- Login Security -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] hover:border-primary-fixed-dim transition-colors flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">passkey</span>
+</div>
+<span class="text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Login Security</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage 2FA, biometric authentication, and active sessions.</p>
+</div>
+</div>
+<!-- Device Security -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] hover:border-primary-fixed-dim transition-colors flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded-full">
+                        2 Trusted
+                    </span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Device Security</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Review and manage devices authorized to access your account.</p>
+</div>
+</div>
+<!-- Fraud Awareness -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-md shadow-[0_4px_20px_rgba(0,47,108,0.05)] hover:border-primary-fixed-dim transition-colors flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">gpp_bad</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs">Fraud Awareness</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Recent alerts and patterns identified by our security team.</p>
+</div>
+</div>
+</section>
+<!-- Educational Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Safety Guides</h2>
+<div class="flex flex-col gap-sm">
+<!-- Guide 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined">phishing</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Recognize Phishing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant hidden md:block">Learn how to identify fake emails and messages.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+<!-- Guide 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-md flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Protect Your UPI</h4>
+<p class="font-body-md text-body-md text-on-surface-variant hidden md:block">Best practices for secure UPI transactions.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only per instructions, hiding on md and above) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 backdrop-blur-lg bg-surface/90 border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,47,108,0.05)] flex justify-around items-center h-20 px-4 pb-safe w-full">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-full rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Activity (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-full rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">history</span>
+<span class="font-label-sm text-label-sm">Activity</span>
+</a>
+<!-- Safety (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 scale-95 transition-transform duration-200 w-16 h-full rounded-lg opacity-80" href="#">
+<span class="material-symbols-outlined icon-fill mb-1">verified_user</span>
+<span class="font-label-sm text-label-sm">Safety</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-full rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

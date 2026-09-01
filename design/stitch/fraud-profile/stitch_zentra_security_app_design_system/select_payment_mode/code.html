@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Payment Mode - Zentra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom radio button styles hidden for visual treatment */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Selected state styling */
+        input[type="radio"]:checked + div {
+            border-color: #002f6c; /* primary-container */
+            background-color: rgba(0, 47, 108, 0.05);
+            box-shadow: 0px 4px 20px rgba(0, 47, 108, 0.1);
+        }
+        
+        input[type="radio"]:checked + div .radio-indicator {
+            border-color: #002f6c;
+        }
+        
+        input[type="radio"]:checked + div .radio-indicator::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #002f6c;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Hide scrollbar for clean mobile feel if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/90 text-primary font-headline-md text-headline-md docked full-width top-0 sticky z-50 backdrop-blur-md flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto border-b border-outline-variant/30">
+<!-- Back Button replacing Avatar for transactional flow -->
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50 transition-colors opacity-80 transition-opacity duration-150 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<span class="font-display text-display text-primary tracking-tight">Zentra</span>
+<div class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50 transition-colors opacity-80 transition-opacity duration-150 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-margin-mobile pt-lg pb-32">
+<!-- Header Section -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-sm">How was the payment made?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Select the method you used to complete this transaction.</p>
+</div>
+<!-- Selection Grid -->
+<form class="space-y-sm" id="payment-form">
+<!-- UPI -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="upi"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">qr_code_scanner</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">UPI</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Google Pay, PhonePe, Paytm</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+<!-- Bank Transfer -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="bank_transfer"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Bank Transfer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">IMPS, NEFT, RTGS</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+<!-- Debit/Credit Card -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="card"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">credit_card</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Debit/Credit Card</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Visa, Mastercard, RuPay</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+<!-- Net Banking -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="net_banking"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Net Banking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">All Indian banks</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+<!-- Wallet -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="wallet"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chevron_left</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Wallet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Amazon Pay, MobiKwik</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+<!-- ATM -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="atm"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">local_atm</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">ATM</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Cash deposit at ATM</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+<!-- Other -->
+<label class="block cursor-pointer group">
+<input name="payment_mode" type="radio" value="other"/>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/50 rounded-lg shadow-[0_4px_20px_rgba(0,47,108,0.02)] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_horiz</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Other</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Alternative methods</p>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 border-2 border-outline-variant rounded-full relative transition-colors duration-200 group-hover:border-primary-container/50"></div>
+</div>
+</label>
+</form>
+</main>
+<!-- Bottom Action Bar (Contextual FAB Replacement for Transactional Flow) -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-gradient-to-t from-surface-bright via-surface-bright/90 to-transparent pb-safe">
+<button class="w-full bg-primary-container text-on-primary h-12 rounded-lg font-label-lg text-label-lg flex items-center justify-center transition-all duration-200 opacity-50 cursor-not-allowed shadow-none" disabled="" id="continue-btn">
+            Continue
+        </button>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radioButtons = document.querySelectorAll('input[name="payment_mode"]');
+            const continueBtn = document.getElementById('continue-btn');
+
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (document.querySelector('input[name="payment_mode"]:checked')) {
+                        continueBtn.disabled = false;
+                        continueBtn.classList.remove('opacity-50', 'cursor-not-allowed', 'shadow-none');
+                        continueBtn.classList.add('shadow-[0_4px_12px_rgba(0,47,108,0.2)]', 'hover:bg-primary-container/90', 'active:scale-[0.98]');
+                        
+                        // Optional subtle glow effect
+                        continueBtn.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 12px rgba(0,47,108,0.2)";
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

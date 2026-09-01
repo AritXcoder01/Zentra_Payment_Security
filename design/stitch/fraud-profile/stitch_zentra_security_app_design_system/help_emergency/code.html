@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help &amp; Emergency - Zentra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#98cbff",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#001b44",
+                      "on-surface": "#191c1e",
+                      "surface-container-low": "#f2f4f6",
+                      "on-primary-fixed-variant": "#224583",
+                      "on-secondary": "#ffffff",
+                      "background": "#f7f9fb",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-fixed": "#001d33",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "primary-container": "#002f6c",
+                      "on-surface-variant": "#434750",
+                      "primary-fixed": "#d8e2ff",
+                      "on-background": "#191c1e",
+                      "secondary-fixed": "#cfe5ff",
+                      "on-primary-container": "#7999dc",
+                      "on-secondary-container": "#003558",
+                      "surface": "#f7f9fb",
+                      "on-error": "#ffffff",
+                      "surface-container": "#eceef0",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#0c1f25",
+                      "on-tertiary-fixed": "#0b1e24",
+                      "inverse-surface": "#2d3133",
+                      "inverse-primary": "#aec6ff",
+                      "secondary": "#00629d",
+                      "tertiary-fixed-dim": "#b6cad2",
+                      "outline": "#747781",
+                      "on-primary-fixed": "#001a42",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#004a77",
+                      "secondary-container": "#00a2fd",
+                      "outline-variant": "#c4c6d2",
+                      "on-tertiary-container": "#899ca5",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container-high": "#e6e8ea",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#3c5d9c",
+                      "surface-bright": "#f7f9fb",
+                      "primary-fixed-dim": "#aec6ff",
+                      "on-tertiary-fixed-variant": "#374951",
+                      "tertiary-container": "#22343b",
+                      "surface-container-highest": "#e0e3e5",
+                      "tertiary-fixed": "#d2e6ef",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "otp-input": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.04em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "otp-input": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "0.2em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.outline-variant');
+            box-shadow: 0 -4px 20px rgba(0,47,108,0.05);
+        }
+        .glass-header {
+            background: rgba(247, 249, 251, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pb-safe">
+<!-- TopAppBar -->
+<header class="glass-header w-full top-0 sticky z-50 border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<button aria-label="Go back" class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors rounded-full p-2">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Help &amp; Emergency</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile py-lg">
+<!-- Emergency Action Banner -->
+<section class="mb-xl">
+<div class="bg-error-container rounded-xl p-lg border border-error/20 flex flex-col md:flex-row items-start md:items-center gap-md">
+<div class="bg-error text-on-error rounded-full p-3 flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="emergency" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-error mb-sm">Immediate Action Required?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">If you suspect your account has been compromised, lock it immediately to prevent unauthorized access.</p>
+</div>
+<button class="bg-error text-on-error font-label-lg text-label-lg px-md py-sm rounded-lg whitespace-nowrap hover:opacity-90 transition-opacity">Lock Account</button>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">What do you need help with?</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Payment Fraud -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-start gap-sm hover:bg-surface-container-low transition-colors shadow-[0_4px_20px_rgba(0,47,108,0.05)] text-left">
+<div class="bg-secondary-container/20 text-secondary p-2 rounded-lg mb-sm">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Payment Fraud</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Report unauthorized charges.</span>
+</button>
+<!-- Card 2: Suspicious Transaction -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-start gap-sm hover:bg-surface-container-low transition-colors shadow-[0_4px_20px_rgba(0,47,108,0.05)] text-left">
+<div class="bg-secondary-container/20 text-secondary p-2 rounded-lg mb-sm">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Suspicious Activity</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Investigate strange transfers.</span>
+</button>
+<!-- Card 3: Account Compromise -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-start gap-sm hover:bg-surface-container-low transition-colors shadow-[0_4px_20px_rgba(0,47,108,0.05)] text-left">
+<div class="bg-error-container/50 text-error p-2 rounded-lg mb-sm">
+<span class="material-symbols-outlined" data-icon="gpp_maybe">gpp_maybe</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Account Compromise</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Secure your login details.</span>
+</button>
+<!-- Card 4: Lost/Stolen Device -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-start gap-sm hover:bg-surface-container-low transition-colors shadow-[0_4px_20px_rgba(0,47,108,0.05)] text-left">
+<div class="bg-secondary-container/20 text-secondary p-2 rounded-lg mb-sm">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Lost/Stolen Device</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Unlink devices remotely.</span>
+</button>
+<!-- Card 5: Phishing -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-start gap-sm hover:bg-surface-container-low transition-colors shadow-[0_4px_20px_rgba(0,47,108,0.05)] text-left">
+<div class="bg-secondary-container/20 text-secondary p-2 rounded-lg mb-sm">
+<span class="material-symbols-outlined" data-icon="phishing">phishing</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Phishing Scam</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Report fake emails or texts.</span>
+</button>
+<!-- Card 6: Card Issue -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-start gap-sm hover:bg-surface-container-low transition-colors shadow-[0_4px_20px_rgba(0,47,108,0.05)] text-left">
+<div class="bg-secondary-container/20 text-secondary p-2 rounded-lg mb-sm">
+<span class="material-symbols-outlined" data-icon="credit_card_off">credit_card_off</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Card Issue</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Freeze or replace physical card.</span>
+</button>
+</div>
+</section>
+<!-- Emergency Guidance Section -->
+<section class="mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Emergency Guidance</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_20px_rgba(0,47,108,0.05)]">
+<ol class="list-decimal list-inside space-y-md font-body-md text-body-md text-on-surface-variant">
+<li><strong class="text-on-surface">Do not share your OTP or PIN</strong> with anyone, including individuals claiming to be Zentra support. We will never ask for these details.</li>
+<li><strong class="text-on-surface">Review your recent transactions</strong> carefully. If you see unrecognized activity, report it immediately using the 'Payment Fraud' option above.</li>
+<li><strong class="text-on-surface">Change your password</strong> if you suspect your account has been compromised or if you clicked on a suspicious link.</li>
+<li><strong class="text-on-surface">Contact our 24/7 fraud hotline</strong> for urgent assistance if you cannot access your account or suspect ongoing unauthorized activity.</li>
+</ol>
+</div>
+</section>
+<!-- Official Resources Section -->
+<section class="mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Official Resources</h2>
+<div class="space-y-sm">
+<a class="flex items-center justify-between p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
+<span class="font-label-lg text-label-lg text-on-surface">Security Best Practices Guide</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="policy">policy</span>
+<span class="font-label-lg text-label-lg text-on-surface">Privacy Policy &amp; Data Protection</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="support_agent">support_agent</span>
+<span class="font-label-lg text-label-lg text-on-surface">Contact Zentra Support</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Navigation suppressed as this is a task-focused/emergency flow screen -->
+</body></html>

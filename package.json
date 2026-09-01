@@ -1,0 +1,33 @@
+{
+  "name": "zentra-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zentra — Payment Security App Monorepo",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "overrides": {
+    "react-native-gesture-handler": "2.18.0",
+    "react-native-screens": "3.29.0"
+  },
+  "scripts": {
+    "build:shared": "npm run build --workspace=@zentra/shared",
+    "build:api": "npm run build --workspace=@zentra/api",
+    "start:api": "npm run start:dev --workspace=@zentra/api",
+    "docker:up": "docker compose -f infra/docker/docker-compose.yml up -d",
+    "docker:down": "docker compose -f infra/docker/docker-compose.yml down",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

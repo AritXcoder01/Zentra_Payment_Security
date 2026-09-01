@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - Zentra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#98cbff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#001b44",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002f6c",
+                        "on-surface-variant": "#434750",
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#cfe5ff",
+                        "on-primary-container": "#7999dc",
+                        "on-secondary-container": "#003558",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0c1f25",
+                        "on-tertiary-fixed": "#0b1e24",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#aec6ff",
+                        "secondary": "#00629d",
+                        "tertiary-fixed-dim": "#b6cad2",
+                        "outline": "#747781",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a77",
+                        "secondary-container": "#00a2fd",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-container": "#899ca5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#3c5d9c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-tertiary-fixed-variant": "#374951",
+                        "tertiary-container": "#22343b",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d2e6ef",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "otp-input": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "otp-input": ["28px", { "lineHeight": "36px", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 47, 108, 0.1);
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 backdrop-blur-md bg-surface/90 dark:bg-surface-dim/90 text-primary dark:text-primary-fixed-dim border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-gutter">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center border border-outline-variant/30 cursor-pointer hover:bg-surface-variant/50 transition-colors">
+<img class="w-full h-full object-cover" data-alt="A clean, professional portrait of an individual used as a user profile avatar. The subject is well-lit with a soft, bright background that conveys trust and modern corporate security. The aesthetic is crisp, aligned with a premium digital service, using natural skin tones and a subtle professional smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChztCD40PoZ6ZNXeQ0RdNx4IcRuXCzatV0g3T1QSJJbFksHSzEZMCw_uaMVKYrzvAv3GdxEeENhZm0CUn5XduAlMrnFjGdHdTt-_2Txtb-vjDh5Yhr8fhFDVUGgSA5x-pZ4lVYtcHYJhEnsce5En2KFc4lQ_vfivggrtCKVvRwnq7jVubf3IYEDAVfGz8hlKgZRgV7rz5DT4H7RBoaCT_m8vSXittLQDKomK6QGmKJFqwHnFnH41aa"/>
+</div>
+<span class="font-display text-display text-primary dark:text-primary-fixed-dim tracking-tight">Zentra</span>
+</div>
+<button aria-label="Notifications" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-variant/50 dark:hover:bg-surface-container-highest/50 transition-colors opacity-80 hover:opacity-100 text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin-mobile py-lg pb-32 overflow-y-auto">
+<!-- Profile Overview Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,47,108,0.05)] border border-outline-variant/30 p-lg mb-lg relative overflow-hidden">
+<!-- Decorative background blob -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-center md:items-start gap-lg relative z-10">
+<!-- Large Avatar -->
+<div class="relative">
+<div class="w-24 h-24 rounded-full bg-surface-container-high border-2 border-primary-fixed-dim overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A clean, professional portrait of an individual used as a user profile avatar. The subject is well-lit with a soft, bright background that conveys trust and modern corporate security. The aesthetic is crisp, aligned with a premium digital service, using natural skin tones and a subtle professional smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYjie81SjlxEhtAJpnTXwB0Bhg4v5VsKntW_PMXS8FvHL3cezGEWNKHfazrMVaaqRaBY3qBAo3CgUwjZEJhIMpe7pIJmCQV9qtauL48Y6ATtZAjcXiYXb-sAODRZlWqxuNhywAHcD29tuoNrpgWsLe_R2V7bg96INIwEdCwGF5vce7x0a-1fo8Kivi89XDtM_AS_QRwiapcXDVBKhMkBI2SP_hUSdxHQXZPS4NRX6RoRiYTEeic6fD"/>
+</div>
+<button class="absolute bottom-0 right-0 w-8 h-8 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Alex Reynolds</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">alex.reynolds@example.com</p>
+<!-- Mobile Number & Verification -->
+<div class="inline-flex items-center gap-sm bg-surface-container-low px-md py-sm rounded-lg border border-outline-variant/50">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="lock">lock</span>
+<div class="flex flex-col text-left">
+<div class="flex items-center gap-sm">
+<span class="font-label-lg text-label-lg text-on-surface">+91 98765 43210</span>
+<span class="inline-flex items-center gap-xs px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-[10px] font-semibold tracking-wider">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Verified
+                                </span>
+</div>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Your registered mobile number is your account identifier.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid for Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+<!-- Personal Information -->
+<a class="group glass-card rounded-xl p-md flex items-center justify-between hover:bg-surface-variant/30 transition-colors" href="#">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Personal Information</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant">Update your details</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Security -->
+<a class="group glass-card rounded-xl p-md flex items-center justify-between hover:bg-surface-variant/30 transition-colors" href="#">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/50 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Security</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant">Password, PIN, Biometrics</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Devices & Sessions -->
+<a class="group glass-card rounded-xl p-md flex items-center justify-between hover:bg-surface-variant/30 transition-colors" href="#">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/50 flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Devices &amp; Sessions</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant">Manage active logins</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Privacy -->
+<a class="group glass-card rounded-xl p-md flex items-center justify-between hover:bg-surface-variant/30 transition-colors" href="#">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">visibility_off</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Privacy</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant">Data controls and sharing</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Help & Support -->
+<a class="group glass-card rounded-xl p-md flex items-center justify-between hover:bg-surface-variant/30 transition-colors" href="#">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">help</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Help &amp; Support</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant">FAQs and contact</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- About Zentra -->
+<a class="group glass-card rounded-xl p-md flex items-center justify-between hover:bg-surface-variant/30 transition-colors" href="#">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">About Zentra</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant">Version, Terms, Legal</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+</div>
+<!-- Destructive Actions -->
+<div class="space-y-sm">
+<button class="w-full flex items-center justify-center gap-sm py-3 px-4 rounded-lg border-1.5 border-outline hover:bg-surface-variant/20 transition-colors font-label-lg text-label-lg text-on-surface">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Logout
+            </button>
+<button class="w-full flex items-center justify-center gap-sm py-3 px-4 rounded-lg bg-error/10 hover:bg-error/20 transition-colors font-label-lg text-label-lg text-error">
+<span class="material-symbols-outlined text-[20px]">delete_forever</span>
+                Delete Account
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 backdrop-blur-lg bg-surface/90 dark:bg-surface-dim/90 border-t border-outline-variant/20 dark:border-outline/10 shadow-[0_-4px_20px_rgba(0,47,108,0.05)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 w-16 h-16 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 w-16 h-16 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 w-16 h-16 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm">Safety</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold after:content-[''] after:w-1 after:h-1 after:bg-primary dark:after:bg-primary-fixed-dim after:rounded-full after:mt-1 hover:bg-surface-container-low dark:hover:bg-surface-container-lowest/10 w-16 h-16 rounded-xl transition-colors opacity-80 scale-95 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
