@@ -1,0 +1,67 @@
+@startuml Zentra_Presentation_Use_Case_Diagram
+skinparam backgroundColor white
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam actorStyle stickman
+
+skinparam actor {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+    FontName Arial
+    FontSize 13
+}
+
+skinparam usecase {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+    FontName Arial
+    FontSize 12
+}
+
+skinparam rectangle {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+    FontName Arial
+    FontSize 14
+    FontStyle bold
+}
+
+skinparam arrow {
+    Color #000000
+    FontName Arial
+    FontSize 10
+}
+
+left to right direction
+
+actor "Zentra User" as User
+actor "Android OS" as AndroidOS
+actor "Official External Services" as ExternalGov
+
+rectangle "ZENTRA PAYMENT SECURITY SYSTEM" {
+    usecase UC_Auth as "Register / Login"
+    usecase UC_Txn as "View Dashboard & Activity"
+    usecase UC_Detect as "Payment Activity Detection"
+    usecase UC_Fraud as "Report Payment Fraud"
+    usecase UC_Guidance as "View Action Guidance"
+    usecase UC_AccessGov as "Access Official Resource"
+    usecase UC_History as "View Fraud Report History"
+    usecase UC_Alerts as "View Security Alerts"
+    usecase UC_Profile as "Manage Profile & Sessions"
+}
+
+User -- UC_Auth
+User -- UC_Txn
+User -- UC_Detect
+User -- UC_Fraud
+User -- UC_History
+User -- UC_Alerts
+User -- UC_Profile
+
+AndroidOS -- UC_Detect
+
+UC_Fraud ..> UC_Guidance : <<include>>
+UC_AccessGov ..> UC_Guidance : <<extend>>
+ExternalGov -- UC_AccessGov
+
+@enduml

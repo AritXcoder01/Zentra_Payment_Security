@@ -20,7 +20,7 @@ export class SessionsService {
       orderBy: { createdAt: 'desc' },
     });
 
-    return sessions.map((sess) => ({
+    return sessions.map((sess: any) => ({
       id: sess.id,
       status: sess.status,
       createdAt: sess.createdAt,

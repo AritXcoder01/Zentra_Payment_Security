@@ -1,0 +1,152 @@
+erDiagram
+    users ||--o{ otp_requests : "requests"
+    users ||--o{ sessions : "establishes"
+    users ||--o{ devices : "registers"
+    users ||--o{ transactions : "executes"
+    users ||--o{ fraud_reports : "submits"
+    users ||--o{ security_alerts : "receives"
+    users ||--o{ audit_logs : "triggers"
+
+    devices ||--o{ sessions : "hosts"
+
+    fraud_categories ||--o{ fraud_reports : "classifies"
+    fraud_categories ||--o{ official_resources : "guides"
+
+    transactions ||--o{ fraud_reports : "associated_with"
+    transactions ||--o{ security_alerts : "triggers_alert"
+
+    fraud_reports ||--o{ security_alerts : "generates_warning"
+
+    users {
+        string id PK "UUID"
+        string mobile_number UK "Unique Mobile"
+        string email UK "Optional Unique Email"
+        string full_name "Nullable"
+        string profile_photo "Nullable"
+        string account_status "ACTIVE, SUSPENDED, DELETED"
+        datetime created_at "Timestamp"
+        datetime updated_at "Timestamp"
+        datetime last_login_at "Nullable"
+    }
+
+    otp_requests {
+        string id PK "UUID"
+        string mobile_number "Indexed"
+        string user_id FK "Nullable FK to users.id"
+        string otp_hash "SHA-256 Hashed OTP"
+        datetime expires_at "Timestamp"
+        datetime verified_at "Nullable"
+        int attempts "Default 0"
+        datetime cooldown_until "Nullable"
+        string status "PENDING, VERIFIED, EXPIRED, FAILED"
+        datetime created_at "Timestamp"
+    }
+
+    sessions {
+        string id PK "UUID"
+        string user_id FK "FK to users.id"
+        string device_id FK "Nullable FK to devices.id"
+        string refresh_token_hash "SHA-256 Hashed Token"
+        string status "ACTIVE, REVOKED, EXPIRED"
+        datetime expires_at "Timestamp"
+        datetime revoked_at "Nullable"
+        datetime last_used_at "Timestamp"
+        string ip_address "Nullable"
+        string user_agent "Nullable"
+        datetime created_at "Timestamp"
+    }
+
+    devices {
+        string id PK "UUID"
+        string user_id FK "FK to users.id"
+        string device_fingerprint "Device Hash"
+        string platform "ANDROID, IOS, WEB, OTHER"
+        string app_version "Nullable"
+        string device_model "Nullable"
+        string push_token "Nullable"
+        datetime first_seen_at "Timestamp"
+        datetime last_seen_at "Timestamp"
+    }
+
+    fraud_categories {
+        string id PK "UUID"
+        string code UK "Unique Code e.g. PHISHING_UPI"
+        string name "Display Name"
+        string description "Detailed Text"
+        string severity "LOW, MEDIUM, HIGH, CRITICAL"
+        json recommended_actions "Structured JSON Guide"
+        boolean is_active "Default true"
+        datetime created_at "Timestamp"
+        datetime updated_at "Timestamp"
+    }
+
+    official_resources {
+        string id PK "UUID"
+        string authority_name "Authority / Portal Name"
+        string fraud_category_id FK "Nullable FK to fraud_categories.id"
+        string payment_mode "Nullable Enum"
+        string resource_type "WEBSITE, PHONE, EMAIL"
+        string website_url "Nullable HTTPS URL"
+        string phone_number "Nullable Helpline e.g. 1930"
+        string email_address "Nullable Email"
+        string instructions "Nullable Action Guide"
+        int priority "Default 1"
+        boolean is_active "Default true"
+        datetime last_verified_at "Nullable"
+        datetime created_at "Timestamp"
+        datetime updated_at "Timestamp"
+    }
+
+    transactions {
+        string id PK "UUID"
+        string user_id FK "FK to users.id"
+        string transaction_type "CREDIT, DEBIT, OTHER"
+        decimal amount "db.Decimal(12,2)"
+        string currency "Default INR"
+        string transaction_reference "Nullable UTR / TxnID"
+        string merchant_name "Nullable Merchant Name"
+        string merchant_vpa "Nullable VPA"
+        string account_mask "Nullable Masked Acct"
+        datetime transaction_date "Timestamp"
+        string source "MANUAL, NOTIFICATION, API"
+        datetime created_at "Timestamp"
+    }
+
+    fraud_reports {
+        string id PK "UUID"
+        string user_id FK "FK to users.id"
+        string fraud_category_id FK "FK to fraud_categories.id"
+        string payment_mode "UPI, BANK_TRANSFER, CARD, etc."
+        decimal amount "db.Decimal(12,2)"
+        string currency "Default INR"
+        datetime incident_date "Timestamp"
+        string description "User Incident Notes"
+        string transaction_reference "Nullable UTR / TxnID"
+        string transaction_id FK "Nullable FK to transactions.id"
+        string status "SUBMITTED, UNDER_REVIEW, RESOLVED"
+        datetime created_at "Timestamp"
+        datetime updated_at "Timestamp"
+    }
+
+    security_alerts {
+        string id PK "UUID"
+        string user_id FK "FK to users.id"
+        string alert_type "SUSPICIOUS_LOGIN, FRAUD_WARNING"
+        string severity "LOW, MEDIUM, HIGH, CRITICAL"
+        string title "Alert Title"
+        string message "Alert Content"
+        string fraud_report_id FK "Nullable FK to fraud_reports.id"
+        string transaction_id FK "Nullable FK to transactions.id"
+        boolean is_read "Default false"
+        datetime created_at "Timestamp"
+    }
+
+    audit_logs {
+        string id PK "UUID"
+        string user_id FK "Nullable FK to users.id"
+        string action "Event Action Code"
+        string ip_address "Nullable IP"
+        string user_agent "Nullable User Agent"
+        json metadata "Structured JSON Metadata"
+        datetime created_at "Timestamp"
+    }

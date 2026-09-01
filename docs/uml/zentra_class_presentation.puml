@@ -1,0 +1,108 @@
+@startuml Zentra_Presentation_Class_Diagram
+skinparam backgroundColor white
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #0F172A
+    HeaderBackgroundColor #1E3A8A
+    HeaderFontColor #FFFFFF
+    FontName Arial
+    FontSize 11
+}
+
+skinparam arrow {
+    Color #334155
+    FontName Arial
+    FontSize 10
+}
+
+package "MOBILE LAYER" {
+    class ApiClient <<service>> {
+        +request()
+        +requestOtp()
+        +verifyOtp()
+        +createFraudReport()
+    }
+
+    class SecureAuthStorage <<secure storage>> {
+        +getAccessToken()
+        +setAccessToken()
+        +clearAuthSession()
+    }
+
+    class NotificationParserService <<service>> {
+        +parseNotification()
+        +isDuplicate()
+        +computeSha256()
+    }
+
+    class NotificationBridgeService <<service>> {
+        +isNotificationListenerEnabled()
+        +flushPendingQueue()
+    }
+}
+
+package "ANDROID NATIVE LAYER" {
+    class ZentraNotificationListenerService <<native service>> {
+        +onNotificationPosted()
+    }
+
+    class NativeKeystoreHelper <<native helper>> {
+        +encrypt()
+        +decrypt()
+    }
+
+    class NotificationListenerModule <<native module>> {
+        +getPendingNativeNotifications()
+    }
+}
+
+package "NESTJS BACKEND LAYER" {
+    class AuthController <<controller>>
+    class TransactionsController <<controller>>
+    class FraudController <<controller>>
+    class SessionsController <<controller>>
+
+    class AuthService <<service>>
+    class TransactionsService <<service>>
+    class FraudService <<service>>
+    class SessionsService <<service>>
+
+    class PrismaService <<persistence>>
+}
+
+package "PERSISTENCE TIER" {
+    class PostgreSQL <<database>>
+    class Redis <<cache>>
+}
+
+' Key Dependencies
+ApiClient --> SecureAuthStorage
+NotificationBridgeService --> NotificationParserService
+NotificationBridgeService ..> NotificationListenerModule : <<native bridge>>
+
+ZentraNotificationListenerService --> NativeKeystoreHelper
+NotificationListenerModule ..> ZentraNotificationListenerService
+
+ApiClient ..> AuthController : <<HTTP>>
+ApiClient ..> TransactionsController : <<HTTP>>
+ApiClient ..> FraudController : <<HTTP>>
+ApiClient ..> SessionsController : <<HTTP>>
+
+AuthController --> AuthService
+TransactionsController --> TransactionsService
+FraudController --> FraudService
+SessionsController --> SessionsService
+
+AuthService --> Redis
+AuthService --> PrismaService
+TransactionsService --> PrismaService
+FraudService --> PrismaService
+SessionsService --> PrismaService
+
+PrismaService --> PostgreSQL
+
+@endl

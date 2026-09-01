@@ -1,0 +1,65 @@
+erDiagram
+    USER ||--o{ SESSION : "has active"
+    USER ||--o{ DEVICE : "owns"
+    USER ||--o{ TRANSACTION : "executes"
+    USER ||--o{ FRAUD_REPORT : "submits"
+    USER ||--o{ SECURITY_ALERT : "receives"
+
+    FRAUD_CATEGORY ||--o{ FRAUD_REPORT : "classifies"
+    FRAUD_CATEGORY ||--o{ OFFICIAL_RESOURCE : "links to"
+
+    TRANSACTION ||--o| FRAUD_REPORT : "linked to"
+    FRAUD_REPORT ||--o| SECURITY_ALERT : "triggers"
+
+    USER {
+        string id PK
+        string mobileNumber UK
+        string accountStatus
+    }
+
+    SESSION {
+        string id PK
+        string userId FK
+        string status
+        datetime expiresAt
+    }
+
+    DEVICE {
+        string id PK
+        string userId FK
+        string deviceFingerprint
+    }
+
+    TRANSACTION {
+        string id PK
+        string userId FK
+        decimal amount "numeric(12,2)"
+        string transactionType
+    }
+
+    FRAUD_REPORT {
+        string id PK
+        string userId FK
+        string fraudCategoryId FK
+        decimal amount "numeric(12,2)"
+        string status
+    }
+
+    FRAUD_CATEGORY {
+        string id PK
+        string code UK
+        string severity
+    }
+
+    OFFICIAL_RESOURCE {
+        string id PK
+        string authorityName
+        string resourceType
+    }
+
+    SECURITY_ALERT {
+        string id PK
+        string userId FK
+        string alertType
+        boolean isRead
+    }

@@ -1,0 +1,121 @@
+@startuml Zentra_Full_Use_Case_Diagram
+skinparam backgroundColor white
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam actorStyle stickman
+
+skinparam actor {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+    FontName Arial
+    FontSize 13
+}
+
+skinparam usecase {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+    FontName Arial
+    FontSize 12
+}
+
+skinparam rectangle {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+    FontName Arial
+    FontSize 14
+    FontStyle bold
+}
+
+skinparam arrow {
+    Color #000000
+    FontName Arial
+    FontSize 10
+}
+
+left to right direction
+
+actor "Zentra User" as User
+actor "Android OS" as AndroidOS
+actor "Official External Services" as ExternalGov
+
+rectangle "ZENTRA PAYMENT SECURITY SYSTEM" {
+    
+    package "AUTHENTICATION" {
+        usecase UC_Register as "Register Account"
+        usecase UC_Login as "Login with Mobile Number"
+        usecase UC_ReqOTP as "Request & Verify OTP"
+        usecase UC_Logout as "Logout"
+        usecase UC_DeleteAcc as "Delete Account"
+    }
+    
+    package "TRANSACTIONS" {
+        usecase UC_Home as "View Home Dashboard"
+        usecase UC_TxnAct as "View Transaction Activity"
+        usecase UC_TxnDet as "View Transaction Details"
+        usecase UC_AddDemo as "Add Demo Transaction\n<<development/demo>>"
+    }
+    
+    package "PAYMENT ACTIVITY DETECTION" {
+        usecase UC_NotifConsent as "Manage Notification Access"
+        usecase UC_DetectEvent as "Detect Eligible Payment Notification"
+        usecase UC_ReviewCandidate as "Review Possible Payment"
+        usecase UC_AddCandidate as "Add Detected Transaction"
+    }
+    
+    package "FRAUD ASSISTANCE" {
+        usecase UC_ReportFraud as "Report Payment Fraud"
+        usecase UC_SubmitFraud as "Submit Report to Zentra"
+        usecase UC_ViewActions as "View Recommended Actions"
+        usecase UC_AccessOfficial as "Access Verified Official Resource"
+        usecase UC_FraudHist as "View Fraud Report History"
+    }
+    
+    package "SAFETY & ALERTS" {
+        usecase UC_SafetyCenter as "View Safety Center"
+        usecase UC_ViewAlerts as "View Security Alerts"
+    }
+    
+    package "PROFILE & SESSIONS" {
+        usecase UC_EditProf as "View & Edit Profile"
+        usecase UC_ViewSess as "View & Revoke Sessions"
+    }
+}
+
+' User Associations
+User -- UC_Register
+User -- UC_Login
+User -- UC_Logout
+User -- UC_DeleteAcc
+User -- UC_Home
+User -- UC_TxnAct
+User -- UC_TxnDet
+User -- UC_AddDemo
+User -- UC_NotifConsent
+User -- UC_ReviewCandidate
+User -- UC_ReportFraud
+User -- UC_FraudHist
+User -- UC_SafetyCenter
+User -- UC_ViewAlerts
+User -- UC_EditProf
+User -- UC_ViewSess
+
+' Android OS Associations
+AndroidOS -- UC_NotifConsent
+AndroidOS -- UC_DetectEvent
+
+' External Services Associations
+ExternalGov -- UC_AccessOfficial
+
+' Relationships: Includes & Extends
+UC_Register ..> UC_ReqOTP : <<include>>
+UC_Login ..> UC_ReqOTP : <<include>>
+
+UC_DetectEvent ..> UC_AddCandidate : <<extend>>
+UC_DetectEvent ..> UC_ReviewCandidate : <<extend>>
+
+UC_ReportFraud ..> UC_SubmitFraud : <<include>>
+UC_ReportFraud ..> UC_ViewActions : <<include>>
+
+UC_AccessOfficial ..> UC_ViewActions : <<extend>>
+
+@enduml

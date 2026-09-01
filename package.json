@@ -12,6 +12,7 @@
     "react-native-screens": "3.29.0"
   },
   "scripts": {
+    "build": "npm run build:shared && prisma generate --schema=apps/api/prisma/schema.prisma && npm run build:api",
     "build:shared": "npm run build --workspace=@zentra/shared",
     "build:api": "npm run build --workspace=@zentra/api",
     "start:api": "npm run start:dev --workspace=@zentra/api",
