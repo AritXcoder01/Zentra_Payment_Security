@@ -12,6 +12,8 @@
     "react-native-screens": "3.29.0"
   },
   "scripts": {
+    "vercel-build": "npm run build:shared && prisma generate --schema=apps/api/prisma/schema.prisma && npm run build:api",
+    "postinstall": "prisma generate --schema=apps/api/prisma/schema.prisma",
     "build": "npm run build:shared && prisma generate --schema=apps/api/prisma/schema.prisma && npm run build:api",
     "build:shared": "npm run build --workspace=@zentra/shared",
     "build:api": "npm run build --workspace=@zentra/api",
